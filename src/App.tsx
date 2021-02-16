@@ -1,24 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter as Router,
+  Switch,
+  Route
+} from 'react-router-dom'
+import {Users} from "./user/users";
+import {Posts} from "./post/posts";
+import PostItem from "./post/post-item";
+import {AddPostForm} from "./post/add-post-form";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <div>
+          <Switch>
+            <Route exact path='/' component={Users}/>
+            <Route exact path='/posts' component={Posts}/>
+            <Route path='/posts/:postId' render={(props) => {return ( <PostItem {...props } /> )}}/>
+            {/*<Route path='/new-post' component={AddPostForm}/>*/}
+          </Switch>
+        </div>
+      </Router>
     </div>
   );
 }
