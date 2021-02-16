@@ -7,6 +7,8 @@ import {Users} from "./user/users";
 import {Posts} from "./post/posts";
 import PostItem from "./post/post-item";
 import {AddPostForm} from "./post/add-post-form";
+import './fonts.css'
+
 
 function App() {
   return (

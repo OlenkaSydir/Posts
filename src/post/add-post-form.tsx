@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import axios from "axios";
-import {Posts} from "./posts";
-
+import './form.css'
 
 export const AddPostForm = () : JSX.Element =>{
     const [userId, setUserId] = useState();
@@ -30,29 +29,35 @@ export const AddPostForm = () : JSX.Element =>{
         });
     }
     return(
-        <div>
+        <div className='list-box'>
+            <div className='new-post'>New Post</div>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <input type='text'
+                    <div className='title'>User ID:</div>
+                    <input type='number'
                            value={userId}
                            onChange={handleUserId}
-                    />
+                           className='list-input'/>
                 </div>
                 <div>
+                    <div className='title'>Title:</div>
                     <input type='text'
                            value={title}
                            onChange={handleTitle}
+                           className='list-input'
                     />
                 </div>
                 <div>
+                    <div className='title'>Body:</div>
                     <input type='text'
                            value={body}
                            onChange={handleBody}
+                           className='list-input'
                     />
                 </div>
                 <button type='submit' onClick={()=>{
                     window.location.href ='/posts'
-                }}>Submit</button>
+                }} className='form-btn'>Submit</button>
             </form>
         </div>
     )

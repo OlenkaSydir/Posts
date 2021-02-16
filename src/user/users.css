@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #cecbdd;
+    font-family: 'Nunito Sans', sans-serif;
+}
+.users-container{
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 800px;
+    min-width: 300px;
+}
+.user{
+    font-size: 1.3em;
+    list-style-type: none;
+
+}
+.btn{
+    width: 100px;
+    height: 40px;
+    border: 2px solid #6c5c80;
+    color: #473d53;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #9c90ae;
+    border-radius: 5px;
+    outline: none;
+    margin: 10px;
+}
+.btn:hover {
+    transition: 0.5s;
+    background-color: #473d53;
+    color: #aea9c8;
+    border: #473d53;
+}
